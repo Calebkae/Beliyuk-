@@ -11,8 +11,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .category-content { display: none; }
-        .category-content.active { display: grid; animation: fadeIn 0.4s ease-out; }
+        /* Memastikan kategori yang tidak aktif benar-benar hilang dari tampilan */
+        .category-content { display: none !important; }
+        .category-content.active { display: grid !important; animation: fadeIn 0.4s ease-out; }
+        
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -113,16 +115,16 @@
     <main class="container mx-auto px-6">
         <div class="text-center mb-16">
             <div class="flex flex-wrap justify-center gap-x-4 gap-y-4">
-                <button onclick="showCategory('diamonds-ml')" class="tab-btn border border-slate-700 px-6 py-4 rounded-2xl font-black transition-all hover:scale-105 active uppercase">
+                <button onclick="showCategory(event, 'diamonds-ml')" class="tab-btn border border-slate-700 px-6 py-4 rounded-2xl font-black transition-all hover:scale-105 active uppercase">
                     <i class="fas fa-gem mr-2"></i> Diamond ML
                 </button>
-                <button onclick="showCategory('diamonds-ff')" class="tab-btn border border-slate-700 px-6 py-4 rounded-2xl font-black transition-all hover:scale-105 uppercase">
+                <button onclick="showCategory(event, 'diamonds-ff')" class="tab-btn border border-slate-700 px-6 py-4 rounded-2xl font-black transition-all hover:scale-105 uppercase">
                     <i class="fas fa-fire mr-2"></i> Diamond FF
                 </button>
-                <button onclick="showCategory('passes')" class="tab-btn border border-slate-700 px-6 py-4 rounded-2xl font-black transition-all hover:scale-105 uppercase">
+                <button onclick="showCategory(event, 'passes')" class="tab-btn border border-slate-700 px-6 py-4 rounded-2xl font-black transition-all hover:scale-105 uppercase">
                     <i class="fas fa-star mr-2"></i> All Pass ML
                 </button>
-                <button onclick="showCategory('bundles')" class="tab-btn border border-slate-700 px-6 py-4 rounded-2xl font-black transition-all hover:scale-105 uppercase">
+                <button onclick="showCategory(event, 'bundles')" class="tab-btn border border-slate-700 px-6 py-4 rounded-2xl font-black transition-all hover:scale-105 uppercase">
                     <i class="fas fa-box-open mr-2"></i> Elite Bundle ML
                 </button>
             </div>
@@ -130,20 +132,20 @@
 
         <div id="product-area" class="pb-10">
             <div id="diamonds-ml" class="category-content active grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">5 Diamonds</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%205%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
-                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">12 Diamonds</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%2012%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
-                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">19 Diamonds</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%2019%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
-                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">28 Diamonds</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%2028%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
-                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">44 Diamonds</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%2044%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
-                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">59 Diamonds</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%2059%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
-                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">85 Diamonds</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%2085%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
-                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">240 Diamonds</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%20240%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
-                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">296 Diamonds</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%20296%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
-                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">408 Diamonds</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%20408%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
-                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">568 Diamonds</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%20568%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
-                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">875 Diamonds</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%20875%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
-                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">2010 Diamonds</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%202010%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
-                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">4830 Diamonds</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%204830%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
+                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">5 Diamonds ML</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%205%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
+                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">12 Diamonds ML</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%2012%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
+                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">19 Diamonds ML</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%2019%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
+                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">28 Diamonds ML</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%2028%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
+                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">44 Diamonds ML</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%2044%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
+                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">59 Diamonds ML</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%2059%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
+                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">85 Diamonds ML</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%2085%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
+                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">240 Diamonds ML</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%20240%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
+                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">296 Diamonds ML</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%20296%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
+                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">408 Diamonds ML</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%20408%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
+                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">568 Diamonds ML</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%20568%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
+                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">875 Diamonds ML</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%20875%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
+                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">2010 Diamonds ML</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%202010%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
+                <div class="product-card bg-slate-800 border-2 border-slate-700 p-8 rounded-3xl text-center shadow-xl"><p class="text-yellow-400 font-black text-xl mb-4">4830 Diamonds ML</p><a href="https://wa.me/6289531460201?text=halo%20beliyuk!%20saya%20ingin%20membeli%204830%20Diamonds%20ML" class="block bg-yellow-500 text-slate-900 text-xs font-black py-4 rounded-xl uppercase">ORDER VIA WA</a></div>
             </div>
 
             <div id="diamonds-ff" class="category-content grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -208,12 +210,29 @@
     </footer>
 
     <script>
-        function showCategory(categoryId) {
-            document.querySelectorAll('.category-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        function showCategory(event, categoryId) {
+            // 1. Ambil semua elemen konten kategori
+            const categories = document.querySelectorAll('.category-content');
+            
+            // 2. Sembunyikan semuanya tanpa kecuali
+            categories.forEach(cat => {
+                cat.classList.remove('active');
+            });
+            
+            // 3. Ambil semua tombol tab dan hapus status aktifnya
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // 4. Tampilkan hanya kategori yang diinginkan
             const target = document.getElementById(categoryId);
-            if(target) target.classList.add('active');
-            if(event && event.currentTarget) event.currentTarget.classList.add('active');
+            if(target) {
+                target.classList.add('active');
+            }
+            
+            // 5. Tambahkan status aktif pada tombol yang diklik
+            event.currentTarget.classList.add('active');
         }
     </script>
 </body>
